@@ -1,0 +1,49 @@
+Ejercicios 6,8,9,10,11,12,13,14,15,16,17.
+
+Ejercicio 6: ejercicio6.Main.java
+
+Ejercicio 8: ejercicio8.NumeroNegativoException.java
+
+Ejercicio 9: Son excepciones no verificadas, lo que significa que no se requiere que el código que las llama las capture o las declare.
+
+Ejercicio 10: printStackTrace(): void - Imprime la traza de la pila de la excepción en la salida estándar "System.err".
+              Esta traza de la pila incluye el tipo de excepción, el mensaje de excepción, la secuencia de llamadas, el archivo y la línea de código donde se produjo la excepción.
+
+Ejercicio 11: "Exception in thread "main" java.lang.RuntimeException: El indice 16 no existe en el vector
+               	at ejercicio11.TestEjercicio11.acceso_por_indice(TestEjercicio11.java:16)
+               	at ejercicio11.TestEjercicio11.main(TestEjercicio11.java:7)"
+
+Ejercicio 12: Compilador: "Unhandled exception: java.lang.Exception" - Se necesita un catch (Excepcion e) para capturar la excepcion.
+
+Ejercicio 13: Compilador: "Unhandled exception: java.lang.Exception" - Se necesita manejar la excepcion con un try-catch en el main porque Excepcion es verificada.
+
+Ejercicio 14: Compilador: "Unhandled exception: java.lang.Exception" - Parecido al 13, aunque en la funcion haya excepciones de Runtime,
+               la excepcion que indica la funcion es Excepction que es verificada.
+
+Ejercicio 15: Salida: "Valor al final del try : 44
+                       Valor al final de finally : 45
+                       Valor antes del return : 46
+                       46" ->
+               Hace el flujo normal del programa, como valor es de tipo int y se hace un parseo "parseInt" asignandole valor numerico adicional
+               no llega al catch que es de tipo NumberFormatException.
+
+Ejercicio 16: Salida: "Valor al final del catch : 43
+                       Valor al final de finally : 44
+                       Valor antes del return : 45
+                       45" ->
+               El valor en el try es de 1, se hace un parseo "parseInt" con valor W, lo que lanza una excepcion de tipo NumberFormatException,
+               valor ya no suma el siguiente numero porque pasa al catch para controlarlo lo que le suma 42 con el parseo y el finally siempre se ejecuta.
+
+Ejercicio 17: Salida: "Valor al final del catch : 43
+                       Valor al final de finally : 44
+                       Excepcion en metodo ( )
+                       java.lang.NumberFormatException: For input string: "W"
+               	       at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+               	       at java.base/java.lang.Integer.parseInt(Integer.java:588)
+               	       at java.base/java.lang.Integer.parseInt(Integer.java:685)
+               	       at ejercicio17.Ejercicio17.metodo(Ejercicio17.java:8)
+               	       at ejercicio17.Ejercicio17.main(Ejercicio17.java:28)" ->
+               	En este caso pasa similar al ejercicio anterior, pero el catch hace un throw e; al final del bloque
+               	catch, lo que lanza la excepcion que hay en el main, imprimiendo excepcion en metodo() y la traza de la excepcion.
+               	Indicando el tipo de excepcion, el mensaje de la excepcion, la secuencia de llamadas, el archivo y la linea de codigo donde se produjo la excepcion:
+               	concretamente en la linea 8 dentro del metodo() con NumberFormatException y en el main en la linea 28 llamando al metodo().
