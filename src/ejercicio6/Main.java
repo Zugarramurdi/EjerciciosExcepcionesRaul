@@ -21,7 +21,7 @@ public class Main {
             indice = scn.nextInt();
             System.out.println("El caracter en la posicion " + indice + " es: " + caracterEn(frase, indice));
         }catch(Exception e) {
-            System.out.println("El indice introducido no es valido");
+            e.printStackTrace();
         }
 
     }
@@ -29,6 +29,6 @@ public class Main {
         if(indice > 0 && indice < cadena.length()){
             return cadena.charAt(indice);
         }
-        throw new Exception();
+        throw new Exception("indice fuera de rango");
     }
 }

@@ -9,7 +9,7 @@ public class TestEjercicio11 {
     }
     public static double acceso_por_indice (double [] v, int j) throws RuntimeException{
         try{
-            if ((0 <= j) && (j <= v.length)){
+            if ((0 <= j) && (j < v.length)){
                 return v[j];
             }
             else {
